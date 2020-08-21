@@ -9,6 +9,7 @@ namespace DesignPattern
         {
             Console.WriteLine("Enter Design Pattern Name");
             Console.WriteLine("Enter abs for Abstract Factory Method.");
+            Console.WriteLine("Enter builder for Builder method.");
             string str = Console.ReadLine();
             if (str.ToLower() == "abs")
             {
