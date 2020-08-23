@@ -12,9 +12,11 @@ namespace DesignPattern
             Console.WriteLine("Enter builder for Builder method.");
             Console.WriteLine("Enter factory for Factory method.");
             Console.WriteLine("Enter prototype for Prototype method.");
+            Console.WriteLine("Enter singleton for Singleton pattern");
             Console.WriteLine("------------------------------------------------------------------------------------------------------");
 
             string str = Console.ReadLine();
+            Console.WriteLine($"Output of {str}\n");
             if (str.ToLower() == "abs")
             {
                 AbstractFactory();
@@ -30,6 +32,10 @@ namespace DesignPattern
             else if (str.ToLower() == "prototype")
             {
                 Prototype();
+            }
+            else if (str.ToLower() == "singleton")
+            {
+                Singleton();
             }
             Console.ReadKey();
         }
@@ -97,6 +103,12 @@ namespace DesignPattern
             Color color2 = colorManager["Angry"].clone() as Color;
             Color color3 = colorManager["Flame"].clone() as Color;
 
+        }
+
+        public static void Singleton()
+        {
+            SingletonMain singletonMain = new SingletonMain();
+            singletonMain.CallSingleton();
         }
     }
 }
