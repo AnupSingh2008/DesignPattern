@@ -10,14 +10,20 @@ namespace DesignPattern
             Console.WriteLine("Enter Design Pattern Name");
             Console.WriteLine("Enter abs for Abstract Factory Method.");
             Console.WriteLine("Enter builder for Builder method.");
+            Console.WriteLine("Enter factory for Factory method.");
+
             string str = Console.ReadLine();
             if (str.ToLower() == "abs")
             {
                 AbstractFactory();
             }
-            else if(str.ToLower() == "builder")
+            else if (str.ToLower() == "builder")
             {
                 Builder();
+            }
+            else if (str.ToLower() == "factory")
+            {
+                Factory();
             }
             Console.ReadKey();
         }
@@ -36,7 +42,7 @@ namespace DesignPattern
         public static void Builder()
         {
             VehicleBuilder vehicleBuilder;
-               
+
             Shop shop = new Shop();
             vehicleBuilder = new MotorCycleBuilder();
             shop.Construct(vehicleBuilder);
@@ -46,7 +52,26 @@ namespace DesignPattern
             shop.Construct(vehicleBuilder);
             vehicleBuilder.Vehicle.Show();
 
-            
+
+        }
+
+        public static void Factory()
+        {
+            Document[] documents = new Document[2];
+            documents[0] = new Resume();
+            documents[1] = new Report();
+
+            foreach(var document in documents)
+            {
+                Console.WriteLine($"Create a documet for :{document.GetType().Name}");
+                Console.WriteLine("-------------------------------------------------");
+                foreach(var page in document.Pages)
+                {
+                    Console.WriteLine($"Added Section : {page.GetType().Name}");
+                }
+                Console.WriteLine($"******{document.GetType().Name} completed.***");
+                Console.WriteLine();
+            }
         }
     }
 }
