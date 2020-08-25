@@ -4,11 +4,7 @@ using System.Text;
 
 namespace DesignPattern.DisignPattern.CreationalPattern
 {
-    class BuilderPattern
-    {
-    }
-
-
+    
     class Shop
     {
         public void Construct(VehicleBuilder vehicleBuilder)
