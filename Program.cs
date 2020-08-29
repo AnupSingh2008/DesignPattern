@@ -17,6 +17,7 @@ namespace DesignPattern
             Console.WriteLine("Enter singleton for Singleton pattern");
             Console.WriteLine("********Structural Design Pattern**********************");
             Console.WriteLine("Enter adapter for Adpater desing pattern.");
+            Console.WriteLine("Enter bridge for Bridge desing pattern.");
             Console.WriteLine("------------------------------------------------------------------------------------------------------");
 
             string str = Console.ReadLine();
@@ -39,6 +40,10 @@ namespace DesignPattern
                     break;
 
                 case "adapter":Adapter();
+                    break;
+
+                case "bridge":
+                    Bridge();
                     break;
 
                 default: 
@@ -123,6 +128,12 @@ namespace DesignPattern
         {
             AdapterMain adapter = new AdapterMain();
             adapter.GetAdapter();
+        }
+
+        public static void Bridge()
+        {
+            BridgeMain bridgeMain = new BridgeMain();
+            bridgeMain.GetBridgeMain();
         }
     }
 }
