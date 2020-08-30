@@ -18,6 +18,7 @@ namespace DesignPattern
             Console.WriteLine("********Structural Design Pattern**********************");
             Console.WriteLine("Enter adapter for Adpater desing pattern.");
             Console.WriteLine("Enter bridge for Bridge desing pattern.");
+            Console.WriteLine("Enter composite for Composite desing pattern.");
             Console.WriteLine("------------------------------------------------------------------------------------------------------");
 
             string str = Console.ReadLine();
@@ -44,6 +45,10 @@ namespace DesignPattern
 
                 case "bridge":
                     Bridge();
+                    break;
+
+                case "composite":
+                    Composite();
                     break;
 
                 default: 
@@ -134,6 +139,12 @@ namespace DesignPattern
         {
             BridgeMain bridgeMain = new BridgeMain();
             bridgeMain.GetBridgeMain();
+        }
+
+        public static void Composite()
+        {
+            CompositeMain compositeMain = new CompositeMain();
+            compositeMain.GetCompositeMain();
         }
     }
 }
